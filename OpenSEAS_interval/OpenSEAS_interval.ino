@@ -9,7 +9,7 @@
 const int n_samples = 10; // Define number of samples you plan to take (maximum: 10)
 
 struct Schedule {
-  int Day
+  int Day;
   int Hour;
   int Minute;
 };
