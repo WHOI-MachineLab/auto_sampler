@@ -28,7 +28,7 @@ Schedule FirstSample = {// DAY, HOUR , MIN}; // Define the day of month (1-31) a
   const int servoPin = 23;
 
   void setup()
-  {
+  { 
     // LED pin set to output (for diagnostics)
     pinMode(13, OUTPUT);
 
