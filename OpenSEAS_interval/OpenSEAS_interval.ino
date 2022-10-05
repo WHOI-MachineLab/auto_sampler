@@ -103,7 +103,13 @@ Schedule FirstSample = {// DAY, HOUR , MIN}; // Define the day of month (1-31) a
       return now();
     }
   }
-
+  int valve_postition;
+  int sample(int valve_new){
+    //you will tell the servo which valve to go to.
+    return valve_position;
+    };
+  }
+  void zore(){//let's say you lost power and need to reboot};
   time_t getTeensyTime()
   {
     return Teensy3Clock.get();
