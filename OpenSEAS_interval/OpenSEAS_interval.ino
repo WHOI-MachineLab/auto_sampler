@@ -1,3 +1,4 @@
+// Solomon beign silly...
 // Original version of code developed August 2022, Ryan C. Galusha, WHOI MACHINE Lab
 // This code triggers the first sampling event at a user specified time defined in the structure: 'FirstSample'
 // All subsequent sampling events occur at a regular time interval specified by the constant int: 'SampleInterval'
