@@ -1,4 +1,3 @@
-// Solomon beign silly...
 // Original version of code developed August 2022, Ryan C. Galusha, WHOI MACHINE Lab
 // This code triggers the first sampling event at a user specified time defined in the structure: 'FirstSample'
 // All subsequent sampling events occur at a regular time interval specified by the constant int: 'SampleInterval'
@@ -65,6 +64,8 @@ Schedule FirstSample = {// DAY, HOUR , MIN}; // Define the day of month (1-31) a
     Alarm.delay(10000);
     
     int samples_taken = 0; // number of samples taken so far
+    zero();
+    Serial.println("the servo is done zeroing...");
   }
 
   void loop()
