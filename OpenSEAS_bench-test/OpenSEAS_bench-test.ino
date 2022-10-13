@@ -60,8 +60,13 @@ void setup()
 
 void loop()
 {
+  while(Serial.available() == 0){delay(10)}
   SampleTest(PortToTest); // Run the sample test function, included as a loop
   home(); // return home, then repeat (for multiple trials to check for repeatability)
+  while(Serial.available() != 0){
+    Serial.read();
+    delay(1);
+    }
 }
 
 int SampleTest(int sample_port) // Sample routine for a user defined valve position

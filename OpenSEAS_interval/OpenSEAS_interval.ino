@@ -14,7 +14,7 @@ struct Schedule {
   int Minute;
 };
 
-Schedule FirstSample = {// DAY, HOUR , MIN}; // Define the day of month (1-31) and time of day for the first sample to be triggered
+Schedule FirstSample = {DAY, HOUR , MIN}; // Define the day of month (1-31) and time of day for the first sample to be triggered
   const int SampleInterval = 3600; // Define the regular interval between all remaining samples here (units: seconds)
 
   //Servo constants & variables
