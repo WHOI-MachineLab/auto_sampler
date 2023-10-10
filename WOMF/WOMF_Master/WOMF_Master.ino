@@ -8,7 +8,7 @@ Servo gearbox;
 
 //CHANGE ONLY THIS INFO
 int hour_interval=0; //define the sample intervals (time between samples)
-int minute_interval=5; //(must be at least five minutes)
+int minute_interval=8; //(must be at least five minutes)
 const int hour_till_sample=0; //define when you want sampling to start (change hours and/or minutes)
 const int minute_till_sample=15;
 //
@@ -120,7 +120,7 @@ void loop() {
     pump_sample(5,0); //pump_sample(minute, second);
     myFile.print(ts());myFile.println();
     i = i+1;
-    if(i >= 10){
+      if(i >= 10){
     Serial.println("Sampling is done, putting teensy to idle");
     while(1){}
     }
