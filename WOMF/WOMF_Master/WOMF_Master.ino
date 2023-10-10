@@ -10,7 +10,7 @@ Servo gearbox;
 int hour_interval=0; //define the sample intervals (time between samples)
 int minute_interval=5; //(must be at least five minutes)
 const int hour_till_sample=0; //define when you want sampling to start (change hours and/or minutes)
-const int minute_till_sample=2;
+const int minute_till_sample=15;
 //
 
 const int servo_pin = 23;
@@ -32,6 +32,9 @@ unsigned int address = 0;
 int eeprom_value;
 int term_address;
 int n = 1;
+const int BUFFER_SIZE = 100;
+char SrfMsg[BUFFER_SIZE];
+int rlen;
 
 void setup() {
   // put your setup code here, to run once:
@@ -84,6 +87,22 @@ getDateName();
 
 
 void loop() {
+
+  // listen for serial message
+  if (Serial.available()) {
+    int rlen = Serial.readBytesUntil('\r', SrfMsg, BUFFER_SIZE);
+
+    // type 1 to serial monitor to start pump
+    if (SrfMsg[0] == '1') {
+      Serial.println("pump on");
+      digitalWrite(pump_pin, HIGH);
+    }
+      // type 0 to stop pump
+    if (SrfMsg[0] == '0') {
+      Serial.println("pump off");
+      digitalWrite(pump_pin, LOW);
+    }
+  }
     while((hour() != sample_schedule[0][i])){
     
         Serial.println("waiting for sampling");
